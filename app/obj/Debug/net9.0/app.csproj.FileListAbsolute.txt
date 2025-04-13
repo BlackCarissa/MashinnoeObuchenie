@@ -1,0 +1,15 @@
+C:\Github Repo\MashinnoeObuchenie\app\bin\Debug\net9.0\app.exe
+C:\Github Repo\MashinnoeObuchenie\app\bin\Debug\net9.0\app.deps.json
+C:\Github Repo\MashinnoeObuchenie\app\bin\Debug\net9.0\app.runtimeconfig.json
+C:\Github Repo\MashinnoeObuchenie\app\bin\Debug\net9.0\app.dll
+C:\Github Repo\MashinnoeObuchenie\app\bin\Debug\net9.0\app.pdb
+C:\Github Repo\MashinnoeObuchenie\app\obj\Debug\net9.0\app.GeneratedMSBuildEditorConfig.editorconfig
+C:\Github Repo\MashinnoeObuchenie\app\obj\Debug\net9.0\app.AssemblyInfoInputs.cache
+C:\Github Repo\MashinnoeObuchenie\app\obj\Debug\net9.0\app.AssemblyInfo.cs
+C:\Github Repo\MashinnoeObuchenie\app\obj\Debug\net9.0\app.csproj.CoreCompileInputs.cache
+C:\Github Repo\MashinnoeObuchenie\app\obj\Debug\net9.0\app.sourcelink.json
+C:\Github Repo\MashinnoeObuchenie\app\obj\Debug\net9.0\app.dll
+C:\Github Repo\MashinnoeObuchenie\app\obj\Debug\net9.0\refint\app.dll
+C:\Github Repo\MashinnoeObuchenie\app\obj\Debug\net9.0\app.pdb
+C:\Github Repo\MashinnoeObuchenie\app\obj\Debug\net9.0\app.genruntimeconfig.cache
+C:\Github Repo\MashinnoeObuchenie\app\obj\Debug\net9.0\ref\app.dll
