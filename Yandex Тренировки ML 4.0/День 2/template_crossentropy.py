@@ -22,13 +22,15 @@ def select_elites(states_batch, actions_batch, rewards_batch, percentile=50):
     (they will become different later).
     """
     # your code here
-    elite_states, elite_actions = None, None
+    reward_threshold = np.percentile(rewards_batch, percentile)
+    elite_states = [s for i in range(len(states_batch)) if rewards_batch[i] >= reward_threshold for s in states_batch[i]]
+    elite_actions = [s for i in range(len(actions_batch)) if rewards_batch[i] >= reward_threshold for s in actions_batch[i]]
     assert elite_states is not None and elite_actions is not None
     # your code here
 
     return elite_states, elite_actions
 
-def update_policy(elite_states, elite_actions, n_states, n_actions):
+def update_policy(elite_states, elite_actions, n_states=n_states, n_actions=n_actions):
     """
     Given old policy and a list of elite states/actions from select_elites,
     return new updated policy where each action probability is proportional to
@@ -46,10 +48,14 @@ def update_policy(elite_states, elite_actions, n_states, n_actions):
     :returns: new_policy: np.array of shape (n_states, n_actions)
     """
     # your code here
-    new_policy = None
-    assert new_policy is not None
-    # your code here
-
+    new_policy = np.zeros([n_states, n_actions])
+    for s, a in zip(elite_states, elite_actions):
+        new_policy[s][a] += 1
+    for i in range(len(new_policy)):
+        if np.sum(new_policy[i])==0:
+            new_policy[i] = np.ones(n_actions)/n_actions
+        else:
+            new_policy[i] = new_policy[i]/np.sum(new_policy[i])
     return new_policy
 
 def generate_session(env, policy, t_max=int(10**4)):
@@ -62,13 +68,14 @@ def generate_session(env, policy, t_max=int(10**4)):
     """
     states, actions = [], []
     total_reward = 0.
-
+    n_actions = policy.shape[1]
     s, info = env.reset()
 
     for t in range(t_max):
         # your code here - sample action from policy and get new state, reward, done flag etc. from the environment
-        new_s, r, done = None, None, None
-        a = None
+        a = np.random.choice(n_actions, p=policy[s])
+        st = env.step(a)
+        new_s, r, done = st[0], st[1], st[2]
         assert new_s is not None and r is not None and done is not None
         assert a is not None
         # your code here
